@@ -1,11 +1,12 @@
-import styled from "@emotion/styled";
+import React from 'react'
+import styled from '@emotion/styled'
 
 const Container = styled.div`
   display: grid;
   height: 100vh;
   justify-content: center;
   align-items: center;
-`;
+`
 function App() {
   return (
     <Container>
@@ -14,4 +15,4 @@ function App() {
   )
 }
 
-export default App;
+export default App
