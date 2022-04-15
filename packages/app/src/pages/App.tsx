@@ -11,6 +11,7 @@ function App() {
   return (
     <Container>
       <div>App Component - Built with Vite</div>
+      <div>Testing out the pre-commit hook</div>
     </Container>
   )
 }
