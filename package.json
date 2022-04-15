@@ -19,7 +19,7 @@
     ]
   },
   "scripts": {
-    "husky-install": "husky install",
+    "prepare": "husky install",
     "lint-staged": "lint-staged",
     "lint:fix": "lerna run lint:fix"
   }
