@@ -2,6 +2,29 @@
   "name": "root",
   "private": true,
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "eslint": "^8.13.0",
+    "husky": "^7.0.4",
+    "lerna": "^4.0.0",
+    "lint-staged": "^12.3.7",
+    "prettier": "^2.6.2"
+  },
+  "workspaces": [
+    "packages/app",
+    "packages/website",
+    "packages/functions"
+  ],
+  "lint-staged": {
+    "*.{js,ts,tsx,jsx}": [
+      "eslint --quiet --fix"
+    ],
+    "*.{json,md,html,js,jsx,ts,tsx}": [
+      "prettier --write"
+    ]
+  },
+  "scripts": {
+    "husky_install": "husky install",
+    "lint-staged": "lint-staged",
+    "lint:fix": "lerna run lint:fix",
+    "build": "lerna run build"
   }
 }
