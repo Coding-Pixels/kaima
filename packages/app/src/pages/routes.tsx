@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import {
   BrowserRouter as Router,
   Route,
@@ -6,18 +6,20 @@ import {
   Navigate,
 } from 'react-router-dom'
 
-import { Register } from '.'
+const Register = React.lazy(() => import('./Register'))
 
 const Login = () => <div>Login Component</div>
 
 function AppRoutes() {
   return (
     <Router>
-      <Routes>
-        <Route path="/sign-up" element={<Register />} />
-        <Route path="/sign-in" element={<Login />} />
-        <Route path="/" element={<Navigate to="/sign-in" />} />
-      </Routes>
+      <Suspense fallback={<div>Loading ...</div>}>
+        <Routes>
+          <Route path="/sign-up" element={<Register />} />
+          <Route path="/sign-in" element={<Login />} />
+          <Route path="/" element={<Navigate to="/sign-in" />} />
+        </Routes>
+      </Suspense>
     </Router>
   )
 }
