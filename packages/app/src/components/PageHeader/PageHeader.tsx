@@ -5,4 +5,5 @@ export const PageHeader = styled.h1`
   font-weight: 800;
   font-size: 64px;
   color: #000000;
+  margin: 0;
 `
