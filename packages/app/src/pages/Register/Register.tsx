@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { AppContainer, PageHeader } from '../../components'
+import { AppContainer, InputField, PageHeader } from '../../components'
 
 const PageSubTitle = styled.h2`
   font-family: 'Montserrat', sans-serif;
@@ -19,10 +19,14 @@ function Register() {
         <PageHeader>Ka&apos;ima</PageHeader>
         <PageSubTitle>Register New User</PageSubTitle>
         <form onSubmit={handleSubmit}>
-          <input type="text" name="name" placeholder="Your name" />
-          <input type="text" name="email" placeholder="Your email" />
-          <input type="password" name="password" placeholder="Your password" />
-          <input
+          <InputField type="text" name="name" placeholder="Your name" />
+          <InputField type="text" name="email" placeholder="Your email" />
+          <InputField
+            type="password"
+            name="password"
+            placeholder="Your password"
+          />
+          <InputField
             type="password"
             name="retype-password"
             placeholder="Re-type your password"
