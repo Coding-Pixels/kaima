@@ -16,6 +16,8 @@ export default {
     '!functions/**',
     '!dist/**',
     '!src/**/index.ts',
+    '!src/main.tsx',
+    '!src/vite.env.d.ts',
   ],
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
