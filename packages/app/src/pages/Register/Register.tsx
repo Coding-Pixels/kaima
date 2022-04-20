@@ -8,6 +8,13 @@ const PageSubTitle = styled.h2`
   font-size: 40px;
   margin: 0;
 `
+
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 24px;
+`
 function Register() {
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault()
@@ -18,21 +25,33 @@ function Register() {
       <div>
         <PageHeader>Ka&apos;ima</PageHeader>
         <PageSubTitle>Register New User</PageSubTitle>
-        <form onSubmit={handleSubmit}>
-          <InputField type="text" name="name" placeholder="Your name" />
-          <InputField type="text" name="email" placeholder="Your email" />
+        <StyledForm onSubmit={handleSubmit}>
+          <InputField
+            type="text"
+            name="name"
+            placeholder="Your name"
+            labelString="Name"
+          />
+          <InputField
+            type="text"
+            name="email"
+            placeholder="Your email"
+            labelString="Email"
+          />
           <InputField
             type="password"
             name="password"
             placeholder="Your password"
+            labelString="Password"
           />
           <InputField
             type="password"
             name="retype-password"
             placeholder="Re-type your password"
+            labelString="Re-type password"
           />
           <button type="submit">Create new user</button>
-        </form>
+        </StyledForm>
       </div>
     </AppContainer>
   )
