@@ -18,7 +18,7 @@ const InputContainer = styled.div`
 `
 const StyledLabel = styled.label`
   font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 16px;
   margin-bottom: 12px;
 `
