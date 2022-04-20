@@ -9,11 +9,26 @@ const PageSubTitle = styled.h2`
   margin: 0;
 `
 function Register() {
+  const handleSubmit = (e: React.SyntheticEvent) => {
+    e.preventDefault()
+    console.log(e)
+  }
   return (
     <AppContainer>
       <div>
         <PageHeader>Ka&apos;ima</PageHeader>
         <PageSubTitle>Register New User</PageSubTitle>
+        <form onSubmit={handleSubmit}>
+          <input type="text" name="name" placeholder="Your name" />
+          <input type="text" name="email" placeholder="Your email" />
+          <input type="password" name="password" placeholder="Your password" />
+          <input
+            type="password"
+            name="retype-password"
+            placeholder="Re-type your password"
+          />
+          <button type="submit">Create new user</button>
+        </form>
       </div>
     </AppContainer>
   )
