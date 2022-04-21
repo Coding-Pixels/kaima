@@ -10,6 +10,11 @@ const StyledInput = styled.input`
   margin-bottom: 24px;
   padding: 12px;
   border: none;
+
+  &:focus {
+    outline: 2px solid #626367;
+    border-radius: 4px;
+  }
 `
 const InputContainer = styled.div`
   display: flex;
