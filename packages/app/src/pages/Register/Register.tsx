@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from '@emotion/styled'
 import { AppContainer, Button, InputField, PageHeader } from '../../components'
 
@@ -14,6 +15,14 @@ const StyledForm = styled.form`
   flex-direction: column;
   width: 100%;
   margin-top: 24px;
+`
+const StyledLink = styled(Link)`
+  margin-top: 8px;
+  margin-bottom: 8px;
+  color: #000000;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
 `
 function Register() {
   const handleSubmit = (e: React.SyntheticEvent) => {
@@ -51,6 +60,7 @@ function Register() {
             labelString="Re-type password"
           />
           <Button />
+          <StyledLink to="/sign-in">Returning User? Sign-in</StyledLink>
         </StyledForm>
       </div>
     </AppContainer>
