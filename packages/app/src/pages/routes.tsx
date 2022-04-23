@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useContext } from 'react'
 import {
   BrowserRouter as Router,
   Route,
@@ -6,19 +6,40 @@ import {
   Navigate,
 } from 'react-router-dom'
 
+import { AppContainer, AppContext } from '../components'
+
 const Register = React.lazy(() => import('./Register'))
+const Dashboard = React.lazy(() => import('./Dashboard'))
 
 const Login = () => <div>Login Component</div>
 
 function AppRoutes() {
+  const { currentUser } = useContext(AppContext)
   return (
     <Router>
       <Suspense fallback={<div>Loading ...</div>}>
-        <Routes>
-          <Route path="/sign-up" element={<Register />} />
-          <Route path="/sign-in" element={<Login />} />
-          <Route path="/" element={<Navigate to="/sign-in" />} />
-        </Routes>
+        <AppContainer>
+          <Routes>
+            {!currentUser && (
+              <>
+                <Route path="/sign-up" element={<Register />} />
+                <Route path="/sign-in" element={<Login />} />
+                <Route path="/" element={<Navigate to="/sign-in" />} />
+              </>
+            )}
+            {currentUser && (
+              <>
+                <Route path="/dashboard" element={<Dashboard />} />
+              </>
+            )}
+            <Route
+              path="*"
+              element={
+                <Navigate to={currentUser ? '/dashboard' : '/sign-in'} />
+              }
+            />
+          </Routes>
+        </AppContainer>
       </Suspense>
     </Router>
   )
