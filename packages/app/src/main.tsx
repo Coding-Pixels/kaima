@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Global, css } from '@emotion/react'
 import AppRoutes from './pages/routes'
+import { AppProvider } from './components'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -14,6 +15,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         }
       `}
     />
-    <AppRoutes />
+    <AppProvider>
+      <AppRoutes />
+    </AppProvider>
   </React.StrictMode>
 )
