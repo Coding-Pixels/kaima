@@ -1,6 +1,5 @@
 import React, { useState, useContext, SyntheticEvent } from 'react'
-import { Link, Navigate } from 'react-router-dom'
-import styled from '@emotion/styled'
+import { Navigate } from 'react-router-dom'
 import { AppContext, Button, InputField, PageHeader } from '../../components'
 import {
   auth,
@@ -10,33 +9,12 @@ import {
   doc,
   setDoc,
 } from '../../config/firebase'
+import {
+  PageSubTitle,
+  StyledForm,
+  StyledLink,
+} from '../../styles/common.styles'
 
-const PageSubTitle = styled.h2`
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  font-size: 40px;
-  margin: 0;
-`
-
-const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-top: 24px;
-`
-const StyledLink = styled(Link)`
-  margin-top: 8px;
-  margin-bottom: 8px;
-  color: #000000;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-
-  &:focus {
-    outline: solid 2px #626367;
-    border-radius: 4px;
-  }
-`
 function Register() {
   const [error, setError] = useState(null)
   if (AppContext) {
