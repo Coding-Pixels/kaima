@@ -2,7 +2,8 @@ import React, { ReactNode, FC, useState, useEffect } from 'react'
 import firebase from 'firebase/auth'
 import { auth } from '../../config/firebase'
 
-export const AppContext = React.createContext<unknown | null>(null)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const AppContext = React.createContext<any | null>(null)
 
 type Props = {
   children: ReactNode
