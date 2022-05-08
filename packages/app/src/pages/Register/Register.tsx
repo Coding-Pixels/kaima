@@ -14,9 +14,14 @@ import {
   StyledForm,
   StyledLink,
 } from '../../styles/common.styles'
+import useForm from '../../hooks/useForm'
+// import registerForm from './formData.register.json';
 
 function Register() {
+  const { data, errors, handleChange, validateField } = useForm()
   const [error, setError] = useState(null)
+
+  console.log('errors', errors)
   if (AppContext) {
     const { currentUser } = useContext(AppContext)
     if (currentUser) {
@@ -50,28 +55,46 @@ function Register() {
         setError(err.message)
       })
   }
+
   return (
     <div>
       <PageHeader>Ka&apos;ima</PageHeader>
       <PageSubTitle>Register New User</PageSubTitle>
       <StyledForm onSubmit={handleSubmit}>
         <InputField
+          value={data.name}
           type="text"
           name="name"
           placeholder="Your name"
           labelString="Name"
+          onChange={handleChange}
+          onBlur={() =>
+            validateField({
+              isRequired: true,
+              validationExpression: '^[a-zA-Z ]{2,30}$',
+              errorMessage:
+                'You are not allowed to use special characters or numbers in your name',
+              value: data.name,
+              name: 'name',
+            })
+          }
+          error={errors.name}
         />
         <InputField
+          value={data.email}
           type="text"
           name="email"
           placeholder="Your email"
           labelString="Email"
+          onChange={handleChange}
         />
         <InputField
+          value={data.password}
           type="password"
           name="password"
           placeholder="Your password"
           labelString="Password"
+          onChange={handleChange}
         />
         <Button />
         <StyledLink to="/sign-in">Returning User? Sign-in</StyledLink>
