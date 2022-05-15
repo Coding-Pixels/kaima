@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "name": "name",
+      "type": "text",
+      "isRequired": true,
+      "validityExpression": "/^[a-zA-Z ]{2,30}$",
+      "placeholder": "Your name",
+      "labelString": "Name"
+    },
+    {
+      "name": "email",
+      "type": "text",
+      "isRequired": true,
+      "validityExpression": "^/w+@[a-zA-Z_]+?/.[a-zA-Z]{2,3}$",
+      "placeholder": "Your email",
+      "labelString": "Email"
+    },
+    {
+      "name": "password",
+      "type": "password",
+      "isRequired": true,
+      "validityExpression": "/^(?=.*/d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/",
+      "placeholder": "Your password",
+      "labelString": "Password"
+    }
+  ]
+}

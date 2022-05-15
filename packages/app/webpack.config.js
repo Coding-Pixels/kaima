@@ -76,6 +76,9 @@ module.exports = () => {
         historyApiFallback: true,
       },
       plugins: [
+        new webpack.ProvidePlugin({
+          process: 'process/browser',
+        }),
         new webpack.DefinePlugin(envKeys),
         new HtmlWebpackPlugin({
           title: 'Ka-ima | Simple Task App for Smart People',
