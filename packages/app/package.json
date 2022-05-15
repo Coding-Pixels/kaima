@@ -1,0 +1,8 @@
+{
+  "name": "kaima-app",
+  "version": "0.0.1",
+  "description": "A simple tasks app for smart people",
+  "main": "index.js",
+  "author": "Fahad Ahmed",
+  "license": "MIT"
+}
