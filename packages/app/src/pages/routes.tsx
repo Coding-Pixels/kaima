@@ -8,10 +8,9 @@ import {
 
 import { AppContainer, AppContext } from '../components'
 
+const Login = React.lazy(() => import('./Login'))
 const Register = React.lazy(() => import('./Register'))
 const Dashboard = React.lazy(() => import('./Dashboard'))
-
-const Login = () => <div>Login Component</div>
 
 function AppRoutes() {
   const { currentUser } = useContext(AppContext)
