@@ -9,3 +9,5 @@ node_modules/
 .firebase
 
 public
+
+storybook-static

@@ -32,6 +32,17 @@
           "destination": "/index.html"
         }
       ]
+    },
+    {
+      "target": "ui-lib",
+      "public": "packages/ui-lib/storybook-static",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
     }
   ],
   "storage": {
