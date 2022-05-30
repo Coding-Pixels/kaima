@@ -9,8 +9,8 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-source-contentful',
       options: {
-        accessToken: 'vMzPxNI0QNYWIsHZNGD9VqKnkai99WiWCUoi7cgU7Is',
-        spaceId: '3mkfjhyitno4',
+        accessToken: process.env.GATSBY_CMS_ACCESS_TOKEN,
+        spaceId: process.env.GATSBY_CMS_SPACE_ID,
       },
     },
     'gatsby-plugin-emotion',
