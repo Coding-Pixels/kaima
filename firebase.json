@@ -11,7 +11,7 @@
     "source": "apps/functions"
   },
   "hosting": {
-    "public": "public",
+    "public": "apps/web/public",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
