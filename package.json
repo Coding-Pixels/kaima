@@ -16,7 +16,10 @@
   ],
   "lint-staged": {
     "*.{js,ts,tsx,jsx}": [
-      "yarn lint"
+      "eslint --fix --quiet"
+    ],
+    "*.{json,md,html,js,jsx,ts,tsx}": [
+      "prettier --write"
     ]
   },
   "scripts": {
