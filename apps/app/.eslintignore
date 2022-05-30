@@ -9,3 +9,4 @@ README.md
 **/*.png
 tsconfig.json
 webpack.config.js
+.prettierrc.js

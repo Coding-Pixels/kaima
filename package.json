@@ -16,16 +16,14 @@
   ],
   "lint-staged": {
     "*.{js,ts,tsx,jsx}": [
-      "yarn lint:fix"
-    ],
-    "*.{json,md,html,js,ts,jsx,tsx}": [
-      "prettier --write"
+      "yarn lint"
     ]
   },
   "scripts": {
     "prepare": "husky install",
     "lint-staged": "lint-staged",
-    "lint:fix": "lerna run lint:fix",
+    "lint": "lerna exec lint:fix",
+    "format:fix": "lerna run format:fix",
     "build": "lerna run build"
   }
 }
