@@ -1,17 +1,21 @@
-import type { GatsbyConfig } from "gatsby";
+import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Marketing Site`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: [{
-    resolve: 'gatsby-source-contentful',
-    options: {
-      "accessToken": "vMzPxNI0QNYWIsHZNGD9VqKnkai99WiWCUoi7cgU7Is",
-      "spaceId": "3mkfjhyitno4"
-    }
-  }, "gatsby-plugin-emotion"]
+  plugins: [
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        accessToken: 'vMzPxNI0QNYWIsHZNGD9VqKnkai99WiWCUoi7cgU7Is',
+        spaceId: '3mkfjhyitno4',
+      },
+    },
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-image',
+  ],
 };
 
 export default config;
