@@ -1,5 +1,8 @@
 import type { GatsbyConfig } from 'gatsby';
 
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Marketing Site`,
@@ -9,8 +12,8 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-source-contentful',
       options: {
-        accessToken: process.env.GATSBY_CMS_ACCESS_TOKEN,
-        spaceId: process.env.GATSBY_CMS_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
       },
     },
     'gatsby-plugin-emotion',
