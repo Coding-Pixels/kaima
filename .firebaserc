@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "ka-ima"
+  },
+  "targets": {
+    "ka-ima": {
+      "hosting": {
+        "web": [
+          "ka-ima"
+        ],
+        "app": [
+          "kaima-app"
+        ]
+      }
+    }
   }
 }

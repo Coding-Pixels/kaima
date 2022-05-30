@@ -10,16 +10,30 @@
     ],
     "source": "apps/functions"
   },
-  "hosting": {
-    "public": "apps/web/public",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  },
+  "hosting": [
+    {
+      "target": "web",
+      "public": "apps/web/public",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "target": "app",
+      "public": "apps/app/public",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ],
   "storage": {
     "rules": "storage.rules"
   },
