@@ -1,4 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import AppRoutes from './pages/routes';
 
-ReactDOM.render(<div>Hello React</div>, document.querySelector('#root'));
+ReactDOM.render(<AppRoutes />, document.querySelector('#root'));
