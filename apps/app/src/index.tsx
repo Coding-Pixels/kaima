@@ -1,5 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import AppRoutes from './pages/routes';
 
-ReactDOM.render(<AppRoutes />, document.querySelector('#root'));
+const container = document.querySelector('#root');
+const root = createRoot(container);
+root.render(<AppRoutes />);
